@@ -9,13 +9,15 @@ interface PrescriptionListProps {
     selectedId: string | null;
     onSelect: (id: string) => void;
     isProcessing: boolean;
+    onUploadTrigger: () => void;
 }
 
 export default function PrescriptionList({
     prescriptions,
     selectedId,
     onSelect,
-    isProcessing
+    isProcessing,
+    onUploadTrigger
 }: PrescriptionListProps) {
     return (
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 h-full flex flex-col overflow-hidden">
@@ -34,8 +36,14 @@ export default function PrescriptionList({
                         <div className="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center mb-3">
                             <Pill size={28} className="opacity-50" />
                         </div>
-                        <p className="text-base font-medium">No prescriptions yet</p>
-                        <p className="text-sm mt-1">Upload a file to get started</p>
+                        <p className="text-base font-medium text-gray-600">No prescriptions yet</p>
+                        <p className="text-sm mt-1 mb-4">Upload a file to get started</p>
+                        <button
+                            onClick={onUploadTrigger}
+                            className="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 hover:border-gray-400 transition-colors shadow-sm"
+                        >
+                            Upload Prescription
+                        </button>
                     </div>
                 )}
 

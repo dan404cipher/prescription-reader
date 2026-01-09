@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Sidebar from "@/components/Sidebar";
+import ClientLayout from "@/components/ClientLayout";
 
 export const metadata: Metadata = {
     title: "AI Prescription Reader",
@@ -15,17 +15,13 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
                 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
             </head>
             <body>
-                <div className="flex min-h-screen bg-[var(--bg-main)]">
-                    <Sidebar />
-                    <main className="flex-1 ml-20 p-8 overflow-hidden h-screen">
-                        {children}
-                    </main>
-                </div>
+                <ClientLayout>{children}</ClientLayout>
             </body>
         </html>
     );
