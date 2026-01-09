@@ -169,12 +169,12 @@ export async function POST(request: NextRequest) {
             patient: {
                 name: extracted.patient?.name || 'Unknown',
                 age: extracted.patient?.age,
-                gender: extracted.patient?.gender,
+                gender: extracted.patient?.gender as 'Male' | 'Female' | 'Other' | undefined,
             },
             doctor: extracted.doctor || {},
             visit: {
                 date: extracted.visit?.date || new Date().toISOString().split('T')[0],
-                type: extracted.visit?.type || 'OPD',
+                type: (extracted.visit?.type as 'OPD' | 'IPD') || 'OPD',
             },
             clinical: {
                 symptoms: extracted.clinical?.symptoms || [],
