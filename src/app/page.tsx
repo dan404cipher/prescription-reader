@@ -85,7 +85,7 @@ export default function Dashboard() {
     const selectedFile = uploadedFiles.find(f => f.id === selectedId) || null;
 
     return (
-        <div className="h-full flex flex-col gap-4 lg:gap-6">
+        <div className="lg:h-full flex flex-col gap-4 lg:gap-6">
             {/* Top Bar */}
             <header className="flex justify-between items-center bg-white p-3 lg:p-4 rounded-xl border border-gray-200 shadow-sm">
 
@@ -151,7 +151,7 @@ export default function Dashboard() {
             </header>
 
             {/* Main Split View - Responsive */}
-            <div className="flex-1 min-h-0 flex gap-4 lg:gap-6">
+            <div className="flex-1 lg:min-h-0 flex gap-4 lg:gap-6">
                 {/* Left Column: List - Full width on mobile, hidden when viewing */}
                 <div className={`
                     w-full lg:w-80 flex-shrink-0

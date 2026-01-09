@@ -20,7 +20,7 @@ export default function PrescriptionList({
     onUploadTrigger
 }: PrescriptionListProps) {
     return (
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 h-full flex flex-col overflow-hidden">
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 h-auto lg:h-full flex flex-col lg:overflow-hidden">
             {/* Header */}
             <div className="p-5 border-b border-gray-100 flex items-center justify-between bg-white">
                 <h2 className="font-semibold text-lg text-gray-800">Active Prescriptions</h2>
@@ -30,7 +30,7 @@ export default function PrescriptionList({
             </div>
 
             {/* List Content */}
-            <div className="flex-1 overflow-y-auto p-2 space-y-2">
+            <div className="flex-1 lg:overflow-y-auto p-2 space-y-2">
                 {prescriptions.length === 0 && (
                     <div className="h-full flex flex-col items-center justify-center text-gray-400 p-8 text-center bg-gray-50/50 rounded-lg m-2 border-2 border-dashed border-gray-100">
                         <div className="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center mb-3">
